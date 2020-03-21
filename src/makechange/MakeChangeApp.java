@@ -20,13 +20,13 @@ public class MakeChangeApp {
 //			pass price and paid into Cash() method
 			Cash(paid, price);
 							
-			
+		
 //			close scanner
 			sc.close();
 				}
 				
 
-		public static double Cash(double paid, double price) {
+		public static void Cash(double paid, double price) {
 			
 //			determine what the diff is between price and paid
 			double change = (paid-price);
@@ -73,11 +73,14 @@ public class MakeChangeApp {
 //				
 				
 //				change print to customer
-				System.out.println("Your item is: " + price + "\n You paid with: " + paid + " is: \n Your change is: " + twenty + " Twenty: \n" + ten + " Ten: \n" 
+				System.out.println("Your item is: " + price + "\n You paid with: " + paid + " is: \n Your change is: \n" + twenty + " Twenty: \n" + ten + " Ten: \n" 
 						+ five + " Five: \n" + one + " One: \n" + quarter + " Quarter: \n" + dime + " Dime: \n" 
 						+ nickle + " Nickle: \n" + penny + " Penny:");
-			return change;
+				
+				
+			
 		}
+		
 
 	}
 }
