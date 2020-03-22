@@ -59,6 +59,7 @@ public class MakeChangeApp {
             	break;
             default:
             System.out.println("Thats not U.S. Currrency!");
+            break;
 			}
         
 //			double paid = sc.nextDouble();
@@ -73,7 +74,7 @@ public class MakeChangeApp {
 			
 			if (answ == 2) {
 				i++;
-				System.out.println("Thank you coming in!!");
+				System.out.println("Thank you coming in!!  Please shop with us again");
 			} 
 			else {
 				i=0;
