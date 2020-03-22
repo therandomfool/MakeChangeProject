@@ -10,6 +10,7 @@ public class MakeChangeApp {
 		
 		System.out.println(" Welcome to Random's Store!!!");
 		int i = 0;
+		
 		while (i == 0){
 
 			Scanner sc = new Scanner(System.in);
@@ -19,8 +20,50 @@ public class MakeChangeApp {
 			double price = sc.nextDouble();
 			
 //			enter what you are paying with
-			System.out.print("Enter how much you pay with: ");
-			double paid = sc.nextDouble();
+//			double paid = 0.0;
+			System.out.println("What denomination do want to pay with? \n1) 100 \n2) 50 \n3) 20 \n4) 10 \n5) 5 \n6) 1 \n7) .25 \n8) .10 \n9) .05 \n0) .01\t");
+			int pd = (int) sc.nextDouble();
+			
+			double paid = 0;
+			
+			switch(pd) {
+            case 0:
+            	paid = .01;
+            	break;
+            case 1:
+            	paid = 100.00;
+            	break;
+            case 2:
+            	paid = 50.00;
+            	break;
+            case 3:
+            	paid = 20.00;
+            	break;
+            case 4:
+            	paid = 10.00;
+            	break;
+            case 5:
+            	paid = 5.00;
+            	break;
+            case 6:
+            	paid = 1.00;
+            	break;
+            case 7:
+            	paid = .25;
+            	break;
+            case 8:
+            	paid = .10;
+            	break;
+            case 9:
+            	paid = .05;
+            	break;
+            default:
+            System.out.println("Thats not U.S. Currrency!");
+			}
+        
+//			double paid = sc.nextDouble();
+			
+			paid = Math.round(paid);
 			
 //			pass price and paid into Cash() method
 			Cash(paid, price);
@@ -52,20 +95,22 @@ public class MakeChangeApp {
 					qt,
 					dm,
 					nk;
+			
+			
 //			determine what the diff is between price and paid
 			double change = (paid-price);
 			
 			
 //			determine short, exact or overpayment
 			if (paid < price) {
-				System.out.println("HEY!!! YOU SHORTED ME!!");
+				System.out.println("HEY!!! YOU SHORTED ME!!\n");
 			} 
 			else if (paid == price) {
-				System.out.println("Thank You for the exact change!!");
+				System.out.println("Thank You for the exact change!!\n");
 			}
 			else {
 //				~~~~~~~~~~change logic~~~~~~~~~~
-//				look at switch to compare logic choices
+
 				double twenty  = (int)(change / 20);
 				change = change % 20;
 				if (twenty > 1) {
@@ -136,7 +181,7 @@ public class MakeChangeApp {
 //				
 				
 //				change print to customer
-				System.out.println("\tYour item is: " + price + "\n \tYou paid with: " + paid + " is: \n \tYour change is: \n" + (int)twenty + " Twenty" + tw + "\n" + (int)ten + " Ten" + tn + "\n" 
+				System.out.println("\tYour item cost is: " + (double)price + "\n \tYou paid with: " + (double)paid + " is: \n \tYour change is: \n\n" + (int)twenty + " Twenty" + tw + "\n" + (int)ten + " Ten" + tn + "\n" 
 						+ (int)five + " Five" + fv + "\n" + (int)one + " One" + on + "\n" + (int)quarter + " Quarter" + qt + "\n" + (int)dime + " Dime" + dm + "\n" 
 						+ (int)nickle + " Nickle" + nk + "\n" + (int)penny + " Penny:\n \n");
 				
