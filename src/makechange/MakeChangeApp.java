@@ -8,7 +8,7 @@ public class MakeChangeApp {
 			// TODO Auto-generated method stub
 //		open scanner
 		
-		System.out.println(" Welcome to Random's Store!!!");
+		System.out.println(" Welcome to Random's Virtual SD Store!!!");
 		int i = 0;
 		
 		while (i == 0){
@@ -110,7 +110,7 @@ public class MakeChangeApp {
 				System.out.println("Thank You for the exact change!!\n");
 			}
 			else {
-//				~~~~~~~~~~change logic~~~~~~~~~~
+//				~~~~~~~~~~change logic with plural string add on~~~~~~~~~~
 
 				double twenty  = (int)(change / 20);
 				change = change % 20;
@@ -179,10 +179,13 @@ public class MakeChangeApp {
 //				change = change % .01;
 //				look at alternative to Math.round??
 //				
-//				
-				
+//				 System.out.printf("Two decimal digits: %.2f\n", 10.0 / 3.0);
 //				change print to customer
-				System.out.println("\tYour item cost is: " + (double)price + "\n \tYou paid with: " + (double)paid + " is: \n \tYour change is: \n\n" + (int)twenty + " Twenty" + tw + "\n" + (int)ten + " Ten" + tn + "\n" 
+				System.out.printf("\tYour item cost is: %.2f",(double)price);
+				System.out.printf("\n \tYou paid with: %.2f",(double)paid);
+				
+				
+				System.out.println( "\n \tYour change is: \n\n" + (int)twenty + " Twenty" + tw + "\n" + (int)ten + " Ten" + tn + "\n" 
 						+ (int)five + " Five" + fv + "\n" + (int)one + " One" + on + "\n" + (int)quarter + " Quarter" + qt + "\n" + (int)dime + " Dime" + dm + "\n" 
 						+ (int)nickle + " Nickle" + nk + "\n" + (int)penny + " Penny:\n \n");
 				
