@@ -84,6 +84,7 @@ public class MakeChangeApp {
 
 	}
 
+// 			Cash method for denomination logic
 	public static void Cash(double paid, double price) {
 		String tw, tn, fv, on, qt, dm, nk;
 
@@ -91,11 +92,13 @@ public class MakeChangeApp {
 		double change = (paid - price);
 
 //			determine short, exact or overpayment
+
 		if (paid < price) {
 			System.out.println("HEY!!! YOU SHORTED ME!!\n");
 		} else if (paid == price) {
 			System.out.println("Thank You for the exact change!!\n");
 		} else {
+
 //				~~~~~~~~~~change logic with plural string add on~~~~~~~~~~
 
 			double twenty = (int) (change / 20);
@@ -159,16 +162,18 @@ public class MakeChangeApp {
 //              printf() to round the doubles to two places
 			System.out.printf("\tYour item cost is: $%.2f", (double) price);
 			System.out.printf("\n \tYou paid with: $%.2f", (double) paid);
+			System.out.printf("\n\n \tYour change is: $%.2f", (paid - price));
 
 //				change print to customer
-			System.out.println("\n\n \tYour change is: $" + (paid - price) + "\n\n" + (int) twenty + " ~Twenty" + tw
-					+ "\n" + (int) ten + " ~Ten" + tn + "\n" + (int) five + " ~Five" + fv + "\n" + (int) one + " ~One"
-					+ on + "\n" + (int) quarter + " ~Quarter" + qt + "\n" + (int) dime + " ~Dime" + dm + "\n"
-					+ (int) nickle + " ~Nickle" + nk + "\n" + (int) penny + " ~Penny\n \n");
+			System.out.println("\n\n" + (int) twenty + " ~Twenty" + tw + "\n" + (int) ten + " ~Ten" + tn + "\n"
+					+ (int) five + " ~Five" + fv + "\n" + (int) one + " ~One" + on + "\n" + (int) quarter + " ~Quarter"
+					+ qt + "\n" + (int) dime + " ~Dime" + dm + "\n" + (int) nickle + " ~Nickle" + nk + "\n"
+					+ (int) penny + " ~Penny\n \n");
 
 		}
 	}
 
+//	personal greeting method
 	public static void pGreet() {
 
 		int x = 0;
@@ -219,22 +224,16 @@ public class MakeChangeApp {
 				break;
 			default:
 				System.out.println("AUTHORIZED PERSONEL ONLY \n\n");
-				
 
 			}
 //			close scanner
 //			sc.close();
 			if (x == 1) {
-			System.out.println("\nHello " + sensi + ", shall we get down to business?\n\n");
-			}
-			else {
+				System.out.println("\nHello " + sensi + ", shall we get down to business?\n\n");
+			} else {
 				x = 0;
 			}
 
 		}
 	}
-	
-//	public static void transaction() {
-//		
-//	}
 }
