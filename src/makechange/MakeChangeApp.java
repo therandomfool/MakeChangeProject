@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MakeChangeApp {
 
 	public static void main(String[] args) {
-			// TODO Auto-generated method stub
+			
 //		open scanner
 		
 		System.out.println(" Welcome to Random's Virtual SD Store!!!");
@@ -20,7 +20,7 @@ public class MakeChangeApp {
 			double price = sc.nextDouble();
 			
 //			enter what you are paying with
-//			double paid = 0.0;
+
 			System.out.println("What denomination do want to pay with? \n1) 100 \n2) 50 \n3) 20 \n4) 10 \n5) 5 \n6) 1 \n7) .25 \n8) .10 \n9) .05 \n0) .01\t");
 			int pd = (int) sc.nextDouble();
 			
@@ -62,9 +62,9 @@ public class MakeChangeApp {
             break;
 			}
         
-//			double paid = sc.nextDouble();
+
 			
-			paid = Math.round(paid);
+			
 			
 //			pass price and paid into Cash() method
 			Cash(paid, price);
@@ -176,18 +176,15 @@ public class MakeChangeApp {
 				}
 		
 				double penny = Math.round(change / .01);
-//				change = change % .01;
-//				look at alternative to Math.round??
-//				
-//				 System.out.printf("Two decimal digits: %.2f\n", 10.0 / 3.0);
-//				change print to customer
+
+//              printf() to round the doubles to two places
 				System.out.printf("\tYour item cost is: %.2f",(double)price);
 				System.out.printf("\n \tYou paid with: %.2f",(double)paid);
 				
-				
+//				change print to customer
 				System.out.println( "\n \tYour change is: \n\n" + (int)twenty + " Twenty" + tw + "\n" + (int)ten + " Ten" + tn + "\n" 
 						+ (int)five + " Five" + fv + "\n" + (int)one + " One" + on + "\n" + (int)quarter + " Quarter" + qt + "\n" + (int)dime + " Dime" + dm + "\n" 
-						+ (int)nickle + " Nickle" + nk + "\n" + (int)penny + " Penny:\n \n");
+						+ (int)nickle + " Nickle" + nk + "\n" + (int)penny + " Penny\n \n");
 				
 				
 			
