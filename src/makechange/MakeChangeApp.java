@@ -9,7 +9,7 @@ public class MakeChangeApp {
 //		open scanner
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("***** Welcome to Random's Virtual Skill Distillery Store!!! *****");
+		System.out.println("***** Welcome to Random's Virtual Skill Distillery Store!!! *****\n");
 
 		pGreet();
 
@@ -17,13 +17,13 @@ public class MakeChangeApp {
 		while (i == 0) {
 
 //			enter price of item
-			System.out.print("Enter Price: \n");
+			System.out.print("Enter Price of item you wish to purchase: \n");
 			double price = sc.nextDouble();
 
 //			enter what you are paying with
 
 			System.out.println(
-					"\nWhat denomination do want to pay with? \n1) 100 \n2) 50 \n3) 20 \n4) 10 \n5) 5 \n6) 1 \n7) .25 \n8) .10 \n9) .05 \n0) .01\t");
+					"\nWhat denomination do want to pay with? \n1) 100 \n2) 50 \n3) 20 \n4) 10 \n5) 5 \n6) 1 \n7) .50 \n8) .25 \n9) .10 \n10) .05 \n");
 			int pd = (int) sc.nextDouble();
 
 			double paid = 0;
@@ -51,23 +51,25 @@ public class MakeChangeApp {
 				paid = 1.00;
 				break;
 			case 7:
-				paid = .25;
+				paid = .50;
 				break;
 			case 8:
-				paid = .10;
+				paid = .25;
 				break;
 			case 9:
+				paid = .10;
+				break;
+			case 10:
 				paid = .05;
 				break;
 			default:
 				System.out.println("Thats not U.S. Currrency!");
 				break;
 			}
-
-//			pass price and paid into Cash() method
+//				pass price and paid into Cash() method
 			Cash(paid, price);
 
-			System.out.println("Would you like to purchase something else?\t 1) Yes 2) No \n\n");
+			System.out.println("Would you like to purchase something else?\t 1) Yes 2) No \n");
 			int answ = sc.nextInt();
 
 			if (answ == 2) {
@@ -78,15 +80,16 @@ public class MakeChangeApp {
 				continue;
 			}
 
-//			close scanner
+//				close scanner
 			sc.close();
+
 		}
 
 	}
 
 // 			Cash method for denomination logic
 	public static void Cash(double paid, double price) {
-		String tw, tn, fv, on, qt, dm, nk;
+		String tw, tn, fv, on, ft, qt, dm, nk;
 
 //			determine what the diff is between price and paid
 		double change = (paid - price);
@@ -133,6 +136,14 @@ public class MakeChangeApp {
 				on = " ";
 			}
 
+			double fiftyC = (int) (change / .50);
+			change = change % .50;
+			if (fiftyC > 1) {
+				ft = "s";
+			} else {
+				ft = " ";
+			}
+
 			double quarter = (int) (change / .25);
 			change = change % .25;
 			if (quarter > 1) {
@@ -166,9 +177,9 @@ public class MakeChangeApp {
 
 //				change print to customer
 			System.out.println("\n\n" + (int) twenty + " ~Twenty" + tw + "\n" + (int) ten + " ~Ten" + tn + "\n"
-					+ (int) five + " ~Five" + fv + "\n" + (int) one + " ~One" + on + "\n" + (int) quarter + " ~Quarter"
+					+ (int) five + " ~Five" + fv + "\n" + (int) one + " ~One" + on + "\n" + (int) fiftyC + " ~Fifty Cent piece" + ft + "\n" + (int) quarter + " ~Quarter"
 					+ qt + "\n" + (int) dime + " ~Dime" + dm + "\n" + (int) nickle + " ~Nickle" + nk + "\n"
-					+ (int) penny + " ~Penny\n \n");
+					+ (int) penny + " ~Pennies\n \n");
 
 		}
 	}
